@@ -1,10 +1,10 @@
 import React from 'react';
-
+import SanjayImg from "../assets/Sanjay.png";
 const GroupMembers = () => {
   const leader = {
     name: "Prof. Sanjay Singh",
     designation: "Associate Professor, School of Materials Science & Technology, IIT (BHU)",
-    image: "src/assets/Sanjay.png",
+    image:SanjayImg,
   };
 
   const ongoingResearchMembers = [
