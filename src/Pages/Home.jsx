@@ -1,6 +1,6 @@
 import React from 'react';
-import Hero from '../components/Hero';
-import Biography from '../components/Biography';
+import Hero from '../Components/Hero';
+import Biography from '../Components/Biography';
 // import AreaOfInterest from '../components/AreaOfInterest';
 // import Distinctions from '../components/Distinctions';
 // import Publications from '../components/Publications';
