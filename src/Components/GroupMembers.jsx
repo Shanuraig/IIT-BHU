@@ -1,5 +1,16 @@
 import React from 'react';
 import SanjayImg from "../assets/Sanjay.png";
+// Ongoing Research Members
+import KrishnaImg from "../assets/Members/krishna.jpg";
+import VishalImg from "../assets/Members/vishal.jpg";
+import ShivaniImg from "../assets/Members/shivani.png";
+import NidhiImg from "../assets/Members/nidhi.jpg";
+import PankajImg from "../assets/Members/pankaj.jpg";
+import GopalImg from "../assets/Members/gopal.jpg";
+// PhD Alumni
+import AnupamImg from "../assets/Members/anupam.jpg";
+import NishaImg from "../assets/Members/nisha.jpg";
+import GauravImg from "../assets/Members/gaurav.jpg";
 const GroupMembers = () => {
   const leader = {
     name: "Prof. Sanjay Singh",
@@ -10,34 +21,34 @@ const GroupMembers = () => {
   const ongoingResearchMembers = [
     {
       nameRoll: "Mr. Krishna Kant Dubey (18111003)",
-      image: "src/assets/Members/krishna.jpg",
+      image:KrishnaImg,
       projectTitle: "Solid State Refrigeration",
       qualification: "M.Tech. (Materials Science), IIT (BHU)",
       contact: "krishnakantdubey.rs.mst18@iitbhu.ac.in"
     },{
   nameRoll: "Mr. Vishal Kumar (19111009)",
-  image: "src/assets/Members/vishal.jpg",
+  image:VishalImg,
   projectTitle: "Topological Materials",
   qualification: "M.Sc. (Physics), Gurukula Kangri Vishwavidyalaya, Haridwar",
   contact: "vishalkumar.rs.mst19@iitbhu.ac.in\n+91-9758993355"
 },
 {
   nameRoll: "Ms. Shivani Rastogi (20111521)",
-  image: "src/assets/Members/shivani.png",
+  image:ShivaniImg,
   projectTitle: "Investigation of Anomalous Hall Effect in Co₂-based Heusler Alloys",
   qualification: "M.Tech. (Nanotechnology), University of Rajasthan",
   contact: "shivanirastogi.rs.mst20@iitbhu.ac.in\n+91-9772632091"
 },
 {
   nameRoll: "Ms. Nidhi (20111508)",
-  image: "src/assets/Members/nidhi.jpg",
+  image: NidhiImg,
   projectTitle: "Magnetic 2D Materials",
   qualification: "M.Sc. (Physics), Maharshi Dayanand University, Haryana",
   contact: "nidhi.rs.mst20@iitbhu.ac.in\n+91-7495052429"
 },
 {
     nameRoll: "Mr. Pankaj Kumar (2011510)",
-    image: "src/assets/Members/pankaj.jpg",
+    image:PankajImg,
     projectTitle: "Structural, magnetic and novel transport properties of skyrmion host Mn2YZ Heusler alloys",
     qualification: "M.Sc. (Physics), College of Commerce, Arts and Science, Patna",
     contact: "pankajkumar.rs.mst20@itbhu.ac.in",
@@ -45,7 +56,7 @@ const GroupMembers = () => {
   },
   {
     nameRoll: "Mr. Benugopal Bairagya (21111501)",
-    image: "src/assets/Members/gopal.jpg",
+    image: GopalImg,
     projectTitle: "Anomalous Nernst Study of Martensite Phase Transforming Heusler Alloys and Related Systems",
     qualification: "M.Sc. (Physics), Bankura University, West Bengal",
     contact: "benugopalbairagya.rs.mst21@itbhu.ac.in",
@@ -77,7 +88,7 @@ const GroupMembers = () => {
   const phdalumni=[
 {
     nameRoll: "Mr. Anupam Singh",
-    image: "src/assets/Members/anupam.jpg",
+    image: AnupamImg,
     projectTitle: "Phase Transitions, Local Structure and Anomalous Hall Effect in Ni-Mn-based Magnetic Shape Memory Alloys and Related Systems",
     qualification: "Postdoc Fellow at Max Planck Institute of Microstructure Physics, Halle, Germany",
     contact: "anupamksingh1991@gmail.com",
@@ -85,7 +96,7 @@ const GroupMembers = () => {
   },
   {
     nameRoll: "Ms. Nisha Shahi",
-    image: "src/assets/Members/nisha.jpg",
+    image: NishaImg,
     projectTitle: "Investigation of anomalous Hall transport and related phenomena in some Mn-based intermetallic compounds",
     qualification: "Postdoc Fellow at University of Wurzburg, Germany",
     contact: "shahinisha31@gmail.com",
@@ -93,7 +104,7 @@ const GroupMembers = () => {
   },
   {
     nameRoll: "Mr. Gaurav Kumar Shukla",
-    image: "src/assets/Members/gaurav.jpg",
+    image: GauravImg,
     projectTitle: "Anomalous Transport and topological properties of Co-based Heusler alloys",
     qualification: "Postdoc Fellow at National Institute of Materials Science (NIMS), Japan",
     contact: "Gauravshukla571996@gmail.com",
