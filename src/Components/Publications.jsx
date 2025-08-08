@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import publicationsData from '../data/Publications.json';
+import publicationsData from '../data/publications.json';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Publication = () => {
