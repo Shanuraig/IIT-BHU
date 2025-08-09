@@ -1,9 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
+// Importing images from the Facilities folder
+import cfms from '../assets/Facilities/cfms.jpg';
+import dma from '../assets/Facilities/dma.jpg';
+import fesem from '../assets/Facilities/fesem.jpg';
+import gloveBox from '../assets/Facilities/glove_box.jpg';
+import magnetron from '../assets/Facilities/magnetron.jpg';
+import ppms from '../assets/Facilities/ppms.jpg';
+import sample from '../assets/Facilities/sample.png';
+import seebeck from '../assets/Facilities/seebeck.jpg';
+import threeZone from '../assets/Facilities/three_zone.jpg';
+import transport from '../assets/Facilities/transport.jpg';
+import xrd from '../assets/Facilities/xrd.jpg';
 const facilities = [
   {
-    title: "Sample Preparation Unit",
+    title: sample,
     image: "src/assets/Facilities/sample.png",
     description: (
       <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
@@ -23,7 +34,7 @@ const facilities = [
     ),
   },{
     title: "X-ray Diffractometer (XRD)",
-    image: "src/assets/Facilities/xrd.jpg",
+    image: xrd,
     description: (
       <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
         <li><strong>Model:</strong> Rigaku, CuKα, 18kW, Rotating Anode</li>
@@ -45,7 +56,7 @@ const facilities = [
     ),
   }, {
     title: "Cryogen-Free Measurement System (CFMS)",
-    image: "src/assets/Facilities/cfms.jpg",
+    image: cfms,
     description: (
       <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
         <li><strong>Temperature Range:</strong> 1.8K – 325K</li>
@@ -61,7 +72,7 @@ const facilities = [
     ),
   },{
     title: "Dynamic Mechanical Analyzer (TA Instruments)",
-    image: "src/assets/Facilities/dma.jpg", 
+    image: dma, 
     description: (
       <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
         <li><strong>Temperature Range:</strong> 120K – 870K</li>
@@ -72,7 +83,7 @@ const facilities = [
     ),
   },{
   title: "Field Emission Scanning Electron Microscope (FESEM) (ZEISS)",
-  image: "src/assets/Facilities/fesem.jpg",
+  image: fesem,
   description: (
     <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
       <li><strong>Resolution:</strong> ~10 nm</li>
@@ -85,7 +96,7 @@ const facilities = [
 },
 {
   title: "Three Zone Furnace (Nabertherm)",
-  image: "src/assets/Facilities/three_zone.jpg",
+  image: threeZone,
   description: (
     <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
       <li><strong>Temperature Range:</strong> 300 K – 1573 K</li>
@@ -96,7 +107,7 @@ const facilities = [
 },
 {
   title: "Glove Box",
-  image: "src/assets/Facilities/glove_box.jpg",
+  image: gloveBox,
   description: (
     <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
       <li><strong>Atmosphere:</strong> N₂-filled inert environment</li>
@@ -110,7 +121,7 @@ const facilities = [
 },
 {
   title: "Seebeck Coefficient and Resistivity (Two-Probe) Measurement System",
-  image: "src/assets/Facilities/seebeck.jpg",
+  image: seebeck,
   description: (
     <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
       <li><strong>Temperature Range:</strong> 300 K – 1073 K</li>
@@ -119,7 +130,7 @@ const facilities = [
 },
 {
   title: "Transport Measurement Setup",
-  image: "src/assets/Facilities/transport.jpg",
+  image: transport,
   description: (
     <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
       <li><strong>Magnetic Field:</strong> 0 to 1 Tesla</li>
@@ -133,7 +144,7 @@ const facilities = [
 },
 {
   title: "Magnetron Sputtering System",
-  image: "src/assets/Facilities/magnetron.jpg",
+  image: magnetron,
   description: (
     <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
       <li><strong>Application:</strong> Thin-film synthesis</li>
