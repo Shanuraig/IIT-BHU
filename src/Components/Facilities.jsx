@@ -14,8 +14,8 @@ import transport from '../assets/Facilities/transport.jpg';
 import xrd from '../assets/Facilities/xrd.jpg';
 const facilities = [
   {
-    title: sample,
-    image: "src/assets/Facilities/sample.png",
+    title: 'Sample Preparation Unit',
+    image: sample,
     description: (
       <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
         <li>
@@ -44,7 +44,7 @@ const facilities = [
     ),
   },{
     title: "Physical Properties Measurement System (PPMS)",
-    image: "src/assets/Facilities/ppms.jpg",
+    image: ppms,
     description: (
       <ul className="list-disc list-inside space-y-2 text-base text-gray-800 leading-relaxed">
         <li><strong>Model:</strong> Quantum Design's DynaCool</li>
