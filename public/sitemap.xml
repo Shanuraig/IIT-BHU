@@ -9,26 +9,26 @@
 
   <!-- About Section -->
   <url>
-    <loc>https://professor-sanjay-portfolio.netlify.app/#area-of-interest</loc>
+    <loc>https://professor-sanjay-portfolio.netlify.app/area-of-interest</loc>
     <lastmod>2025-08-11</lastmod>
     <priority>0.80</priority>
   </url>
 
   <!-- Projects Section -->
   <url>
-    <loc>https://professor-sanjay-portfolio.netlify.app/#distinctions</loc>
+    <loc>https://professor-sanjay-portfolio.netlify.app/distinctions</loc>
     <lastmod>2025-08-11</lastmod>
     <priority>0.80</priority>
   </url>
 
   <!-- Contact Section -->
   <url>
-    <loc>https://professor-sanjay-portfolio.netlify.app/#publications</loc>
+    <loc>https://professor-sanjay-portfolio.netlify.app/publications</loc>
     <lastmod>2025-08-11</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://professor-sanjay-portfolio.netlify.app/#selected-publications</loc>
+    <loc>https://professor-sanjay-portfolio.netlify.app/selected-publications</loc>
     <lastmod>2025-08-11</lastmod>
     <priority>0.80</priority>
   </url>
