@@ -8,7 +8,7 @@ const Positions = () => {
         className="max-w-4xl mx-auto bg-white shadow-lg border border-red-200 rounded-xl p-8"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5}}
         viewport={{ once: true }}
       >
         <h2 className="text-3xl font-bold text-red-900 mb-6 text-center">

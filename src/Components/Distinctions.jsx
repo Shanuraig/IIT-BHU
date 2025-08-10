@@ -67,7 +67,7 @@ const Distinctions = () => {
             whileTap={{ scale: 0.97 }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, delay:index*0.2}}
+            transition={{ duration: 0.5, delay:index*0.1}}
             viewport={{ once: true }}
           >
             <p className="text-sm text-gray-500 font-medium">{award.year}</p>

@@ -74,7 +74,7 @@ const AreaOfInterest = () => {
               scale: 1.03,
               boxShadow: "0 0 25px rgba(59,130,246,0.6)",
             }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
             <div className="mt-1">{item.icon}</div>
