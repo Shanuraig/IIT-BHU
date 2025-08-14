@@ -72,33 +72,41 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-10 px-6 md:px-16 bg-white">
-      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">
-        Projects
-      </h2>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className="bg-gradient-to-br from-[#fcb9b2] to-[#f7f7f2] p-5 rounded-xl border-l-4 border-[#e01e37] text-black-500 flex flex-col gap-2"
-            whileHover={{
-              scale: 1.04,
-              boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)',
-            }}
-            whileTap={{ scale: 0.97 }}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index*0.1 }}
-            viewport={{ once: true }}
-          >
+  <section id="projects" className="py-10 px-6 md:px-16 bg-white">
+    <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">
+      Projects
+    </h2>
+    <div className="flex flex-col gap-6">
+      {projects.map((project, index) => (
+        <motion.div
+          key={index}
+          className="bg-gradient-to-br from-[#fcb9b2] to-[#f7f7f2] p-5 rounded-xl border-l-4 border-[#e01e37] text-black-500 flex flex-col sm:flex-row sm:items-center gap-4"
+          whileHover={{
+            scale: 1.04,
+            boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)',
+          }}
+          whileTap={{ scale: 0.97 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+        >
+          {/* Number Badge */}
+          <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[#e01e37] text-white font-bold">
+            {index + 1}
+          </span>
+
+          {/* Project Info */}
+          <div>
             <p className="text-sm text-gray-500 font-medium">{project.year}</p>
             <h3 className="text-lg font-semibold text-gray-800">{project.title}</h3>
             <p className="text-gray-700 text-sm">{project.organization}</p>
-          </motion.div>
-        ))}
-      </div>
-    </section>
-  );
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </section>
+);
 };
 
 export default Projects;

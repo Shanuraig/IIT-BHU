@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 const visitsData = [
   {
     facility: "Powder Diffraction and Total Scattering Beamline P02.1, DESY, Hamburg, Germany",
@@ -129,23 +129,44 @@ const visitsData = [
 
 const Visits = () => {
   return (
-    <div className="p-6 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">
-        Visit to Synchrotron/Neutron Radiation Facilities
-      </h1>
-      <ul className="space-y-4">
-        {visitsData.map((visit, index) => (
-          <li
-            key={index}
-            className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
-          >
-            <p className="text-lg font-semibold">{visit.facility}</p>
-            <p className="text-gray-600">{visit.date}</p>
-          </li>
-        ))}
-      </ul>
+  <section id="visits" className="py-10 px-6 md:px-16 bg-white">
+    <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">
+      Visit to Synchrotron/Neutron Radiation Facilities
+    </h2>
+    <div className="flex flex-col gap-6">
+      {visitsData.map((visit, index) => (
+        <motion.div
+          key={index}
+          className="bg-gradient-to-br from-[#fcb9b2] to-[#f7f7f2] p-5 rounded-xl border-l-4 border-[#e01e37] flex flex-col sm:flex-row sm:items-center sm:justify-between"
+          whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(0,0,0,0.1)" }}
+          whileTap={{ scale: 0.98 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: index * 0.03 }}
+          viewport={{ once: true }}
+        >
+          {/* Number Badge */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[#e01e37] text-white font-bold">
+              {index + 1}
+            </span>
+            {/* Facility Name */}
+            <h3 className="text-lg font-semibold text-gray-800">
+              {visit.facility}
+            </h3>
+          </div>
+
+          {/* Date */}
+          <p className="text-sm text-gray-600 font-medium mt-2 sm:mt-0">
+            {visit.date}
+          </p>
+        </motion.div>
+      ))}
     </div>
-  );
+  </section>
+);
+
+
 };
 
 export default Visits;
