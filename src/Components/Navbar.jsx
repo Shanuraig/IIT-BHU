@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/Logo.png';
@@ -15,7 +15,7 @@ const navItems = [
   { label: 'Position Available', path: '/positions' },
   { label: 'Collaborations', path: '/collaboration' },
   { label: 'Group Activities', path: '/group-activities' },
-  { label: 'Visits', path: '/visits' }, // optional route if you have it
+  { label: 'Visits', path: '/visits' },
 ];
 
 const dropdownVariants = {
@@ -27,8 +27,23 @@ const dropdownVariants = {
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation();
+  const dropdownRef = useRef(null);
 
   const isActive = (path) => location.pathname === path;
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="bg-[#85182a] text-white py-5 px-5 flex items-center justify-between sticky top-0 z-50 shadow-lg">
@@ -51,6 +66,7 @@ const Navbar = () => {
           <Link
             key={item.path}
             to={item.path}
+            onClick={() => setDropdownOpen(false)} // Close dropdown when clicking other nav items
             className={`px-4 py-2 rounded-md shadow transition-all hover:scale-105 ${
               isActive(item.path)
                 ? 'bg-white text-[#85182a] font-semibold shadow-lg'
@@ -62,13 +78,25 @@ const Navbar = () => {
         ))}
 
         {/* Dropdown Button */}
-        <div className="relative">
-          <button
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="px-4 py-2 bg-[#da1e37] text-white rounded-md shadow hover:shadow-[#e01e37] hover:scale-105 transition-all"
-          >
-            More
-          </button>
+<div className="relative" ref={dropdownRef}>
+  <button
+    onClick={() => setDropdownOpen(!dropdownOpen)}
+    className={`px-4 py-2 rounded-md shadow transition-all hover:scale-105 flex items-center gap-1 ${
+      dropdownOpen
+        ? 'bg-white text-[#85182a] font-semibold shadow-lg'
+        : 'bg-[#bd1f36] text-white hover:shadow-[#e01e37]'
+    }`}
+  >
+    More
+    <motion.span
+      animate={{ rotate: dropdownOpen ? 180 : 0 }}
+      transition={{ duration: 0.2 }}
+      className="inline-block"
+    >
+      ▼
+    </motion.span>
+  </button>
+
 
           <AnimatePresence>
             {dropdownOpen && (
@@ -77,14 +105,14 @@ const Navbar = () => {
                 animate="visible"
                 exit="exit"
                 variants={dropdownVariants}
-                transition={{ duration: 0.2}}
+                transition={{ duration: 0.2 }}
                 className="absolute right-0 mt-2 w-64 bg-white text-black shadow-xl rounded-lg z-50 overflow-hidden"
               >
                 {navItems.slice(5).map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
-                    onClick={() => setDropdownOpen(false)}
+                    onClick={() => setDropdownOpen(false)} // close when selecting option
                     className={`block w-full text-left px-4 py-2 transition-all ${
                       isActive(item.path)
                         ? 'bg-[#85182a] text-white font-semibold'
