@@ -20,12 +20,6 @@ const GroupMembers = () => {
 
   const ongoingResearchMembers = [
     {
-      nameRoll: "Mr. Krishna Kant Dubey (18111003)",
-      image:KrishnaImg,
-      projectTitle: "Solid State Refrigeration",
-      qualification: "M.Tech. (Materials Science), IIT (BHU)",
-      contact: "krishnakantdubey.rs.mst18@iitbhu.ac.in"
-    },{
   nameRoll: "Mr. Vishal Kumar (19111009)",
   image:VishalImg,
   projectTitle: "Topological Materials",
@@ -109,7 +103,13 @@ const GroupMembers = () => {
     qualification: "Postdoc Fellow at National Institute of Materials Science (NIMS), Japan",
     contact: "Gauravshukla571996@gmail.com",
     phone: "Not Provided"
-  }
+  },{
+      nameRoll: "Mr. Krishna Kant Dubey (18111003)",
+      image:KrishnaImg,
+      projectTitle: "Structural, Magnetic, and Magneto-Transport Properties of Ni-Mn-In-based Shape Memory Heusler Alloys and Related Systems",
+      qualification: "M.Tech. (Materials Science), IIT (BHU)",
+      contact: "kkdbhu@gmail.com"
+    }
   ];
   const mtechalumni=[
     {
