@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 
 // Page or section components
 import Home from './Pages/Home';
+import Links from './Components/Links';
 import AreaOfInterest from './Components/AreaOfInterest';
 import Distinctions from './Components/Distinctions';
 import Facilities from './Components/Facilities';
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/group-activities" element={<GroupActivities />} />
         <Route path="/group-members" element={<GroupMembers />} />
         <Route path="/visits" element={<Visits />} />
+        <Route path="/links" element={<Links />} />
         <Route path="/positions" element={<Positions />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/publications" element={<Publications />} />

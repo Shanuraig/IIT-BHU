@@ -16,6 +16,7 @@ const navItems = [
   { label: "Collaborations", path: "/collaboration" },
   { label: "Group Activities", path: "/group-activities" },
   { label: "Visits", path: "/visits" },
+  { label: "Links", path: "/links" },
 ];
 
 const dropdownVariants = {
