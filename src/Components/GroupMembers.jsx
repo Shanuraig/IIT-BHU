@@ -11,6 +11,8 @@ import GopalImg from "../assets/Members/gopal.jpg";
 import AnupamImg from "../assets/Members/anupam.jpg";
 import NishaImg from "../assets/Members/nisha.jpg";
 import GauravImg from "../assets/Members/gaurav.jpg";
+import Shubham from "../assets/Members/shubham.jpg";
+
 const GroupMembers = () => {
   const leader = {
     name: "Prof. Sanjay Singh",
@@ -57,13 +59,13 @@ const GroupMembers = () => {
     phone: "+91-7001578988"
   },
   {
-    nameRoll: "Mr. Shubham Jaiswal (21111502)",
-    image: "src/assets/Members/shubham.jpg",
+    nameRoll: "Mr. Shubham Jaiswal (24111013)",
+    image: Shubham,
     projectTitle: "Local structure and non-collinear magnetism in 2D magnets",
     qualification: "M.Tech. (Physics), Aligarh Muslim University (AMU)",
     contact: "shubhamjaiswal.rs.mst24@itbhu.ac.in"
   },{
-    nameRoll: "Ms. Anchal Jaiswal",
+    nameRoll: "Ms. Anchal Jaiswal (24111004)",
     image: "src/assets/Members/anchal.jpg",
     projectTitle: "Investigation magneto-transport of Heusler based thin film heterostructure",
     qualification: "M.Sc. (Physics), Indian Institute of Technology, Mumbai",
@@ -71,7 +73,7 @@ const GroupMembers = () => {
     phone: "Not Provided"
   },
   {
-    nameRoll: "Mr. Kallol Das",
+    nameRoll: "Mr. Kallol Das (24111502)",
     image: "src/assets/Members/kallol.jpg",
     projectTitle: "Structure, magnetic and electronic structure of alter-magnets",
     qualification: "M.Sc. (Physics), Vidyasagar University, Midnapore, West Bengal",
