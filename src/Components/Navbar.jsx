@@ -178,39 +178,39 @@ const Navbar = () => {
       </button>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={mobileMenuVariants}
-            transition={{ duration: 0.3 }}
-            className="fixed top-0 right-0 w-3/4 h-full bg-[#85182a] text-white shadow-2xl z-50 flex flex-col p-6 space-y-4 md:hidden"
-          >
-            <div className="flex items-center justify-between mb-6">
-              <img src={logo} alt="Logo" className="h-10 w-10" />
-              <button className="text-2xl" onClick={() => setMobileOpen(false)}>
-                ✖
-              </button>
-            </div>
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setMobileOpen(false)}
-                className={`px-4 py-2 rounded-md transition-all ${
-                  isActive(item.path)
-                    ? "bg-white text-[#85182a] font-semibold shadow-lg"
-                    : "hover:bg-[#e01e37]"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+<AnimatePresence>
+  {mobileOpen && (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={mobileMenuVariants}
+      transition={{ duration: 0.3 }}
+      className="fixed top-0 right-0 w-full h-full max-h-screen overflow-y-auto bg-[#85182a] text-white shadow-2xl z-50 flex flex-col p-6 space-y-4 md:hidden"
+    >
+      <div className="flex items-center justify-between mb-6">
+        <img src={logo} alt="Logo" className="h-10 w-10" />
+        <button className="text-2xl" onClick={() => setMobileOpen(false)}>
+          ✖
+        </button>
+      </div>
+      {navItems.map((item) => (
+        <Link
+          key={item.path}
+          to={item.path}
+          onClick={() => setMobileOpen(false)}
+          className={`px-4 py-2 rounded-md transition-all ${
+            isActive(item.path)
+              ? "bg-white text-[#85182a] font-semibold shadow-lg"
+              : "hover:bg-[#e01e37]"
+          }`}
+        >
+          {item.label}
+        </Link>
+      ))}
+    </motion.div>
+  )}
+</AnimatePresence>
     </motion.header>
   );
 };
