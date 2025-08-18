@@ -228,6 +228,7 @@ const GroupMembers = () => {
     contact: "puli.sheela.mst19@iitbhu.ac.in"
   }
   ];
+  // Desktop version 
   const renderStandardHeader = () => (
     <div className="grid grid-cols-1 md:grid-cols-5 gap-4 bg-gray-100 text-center font-semibold text-[maroon] p-3 text-sm md:text-base">
       <div>Name & Roll No.</div>
@@ -268,7 +269,7 @@ const GroupMembers = () => {
       <div>Contact Details and Position</div>
     </div>
   );
-
+  
   const renderNoImageMember = (member, index) => (
     <div key={index} className="bg-white border border-red-200 rounded-xl shadow p-4 w-full text-sm md:text-base">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center text-center">
@@ -283,61 +284,208 @@ const GroupMembers = () => {
     </div>
   );
 
-  return (
-    <div className="bg-[#fdfdfd] py-10 px-4 md:px-20 text-gray-800">
-      <h2 className="text-3xl font-bold text-center mb-10 text-red-900">Research Group Members</h2>
+  // mobile version 
+  // Standard Member (with image)
+const renderStandardMemberMobile = (member, index) => (
+  <div
+    key={index}
+    className="bg-white border border-red-200 rounded-xl shadow p-4 w-full text-sm space-y-2"
+  >
+    <div className="flex flex-col items-center">
+      {/* Image */}
+      {member.image && (
+        <img
+          src={member.image}
+          alt={member.nameRoll}
+          className="w-28 h-32 rounded-lg object-cover border mb-3"
+        />
+      )}
 
-      {/* Group Leader */}
-      <div className="max-w-[1000px] mx-auto mb-12">
-        <h3 className="text-2xl font-semibold text-red-800 mb-4">Group Leader</h3>
-        <div className="flex flex-col md:flex-row items-center bg-gradient-to-br from-red-100 to-white shadow-md p-6 rounded-xl">
-          <img src={leader.image} alt="Leader" className="w-32 h-32 rounded-lg object-cover border-2 border-red-300 mr-0 md:mr-6 mb-4 md:mb-0" />
-          <div className="text-center md:text-left">
-            <h4 className="text-xl font-semibold text-red-900">{leader.name}</h4>
-            <p className="text-gray-700 mt-1">{leader.designation}</p>
-          </div>
+      {/* Details */}
+      <div className="text-left w-full space-y-1">
+        <p>
+          <span className="font-semibold text-red-800">Name/Roll: </span>
+          {member.nameRoll}
+        </p>
+        <p>
+          <span className="font-semibold text-red-800">Project Title: </span>
+          {member.projectTitle}
+        </p>
+        <p>
+          <span className="font-semibold text-red-800">Qualification: </span>
+          {member.qualification}
+        </p>
+        <p>
+          <span className="font-semibold text-red-800">Contact: </span>
+          <span className="text-blue-600 break-words">{member.contact}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+);
+
+// No Image Member
+const renderNoImageMemberMobile = (member, index) => (
+  <div
+    key={index}
+    className="bg-white border border-red-200 rounded-xl shadow p-4 w-full text-sm space-y-2"
+  >
+    <div className="flex flex-col text-left space-y-1">
+      <p>
+        <span className="font-semibold text-red-800">Name: </span>
+        {member.name}
+      </p>
+      {member.roll && (
+        <p>
+          <span className="font-semibold text-red-800">Roll: </span>
+          {member.roll}
+        </p>
+      )}
+      <p>
+        <span className="font-semibold text-red-800">Project Title: </span>
+        {member.projectTitle}
+      </p>
+      <p>
+  <span className="font-semibold text-red-800">Contact: </span>
+  <span className="text-blue-600 break-words">
+    {member.contact?.split("|||")[0]}
+  </span>
+  <br />
+  <span>
+    <span className="font-semibold text-red-800">
+      {member.contact?.split("|||")[1]?.split(" ")[0]}
+    </span>{" "}
+    {member.contact?.split("|||")[1]
+      ?.split(" ")
+      .slice(1)
+      .join(" ")}
+  </span>
+</p>
+
+    </div>
+  </div>
+);
+
+return (
+  <div className="bg-[#fdfdfd] py-10 px-4 md:px-20 text-gray-800">
+    <h2 className="text-3xl font-bold text-center mb-10 text-red-900">
+      Research Group Members
+    </h2>
+
+    {/* Group Leader */}
+    <div className="max-w-[1000px] mx-auto mb-12">
+      <h3 className="text-2xl font-semibold text-red-800 mb-4">Group Leader</h3>
+      <div className="flex flex-col md:flex-row items-center bg-gradient-to-br from-red-100 to-white shadow-md p-6 rounded-xl">
+        <img
+          src={leader.image}
+          alt="Leader"
+          className="w-32 h-32 rounded-lg object-cover border-2 border-red-300 mr-0 md:mr-6 mb-4 md:mb-0"
+        />
+        <div className="text-center md:text-left">
+          <h4 className="text-xl font-semibold text-red-900">{leader.name}</h4>
+          <p className="text-gray-700 mt-1">{leader.designation}</p>
         </div>
       </div>
+    </div>
 
-      {/* Ongoing Research Members */}
-      <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
-        <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">Ongoing Research Members</h3>
+    {/* Ongoing Research Members */}
+    <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
+      <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">
+        Ongoing Research Members
+      </h3>
+
+      {/* Desktop */}
+      <div className="hidden md:block">
         {renderStandardHeader()}
         {ongoingResearchMembers.map(renderStandardMember)}
       </div>
-      {/* phd alumni */}
-      <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
-        <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">PhD Alumni (Completed)</h3>
+
+      {/* Mobile */}
+      <div className="grid grid-cols-1 gap-6 md:hidden">
+        {ongoingResearchMembers.map(renderStandardMemberMobile)}
+      </div>
+    </div>
+
+    {/* PhD Alumni */}
+    <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
+      <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">
+        PhD Alumni (Completed)
+      </h3>
+
+      <div className="hidden md:block">
         {renderStandardHeader()}
         {phdalumni.map(renderStandardMember)}
       </div>
 
-      {/* M.Tech. (Ongoing) */}
-      <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
-        <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">M.Tech. (Ongoing)</h3>
+      <div className="grid grid-cols-1 gap-6 md:hidden">
+        {phdalumni.map(renderStandardMemberMobile)}
+      </div>
+    </div>
+
+    {/* M.Tech. (Ongoing) */}
+    <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
+      <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">
+        M.Tech. (Ongoing)
+      </h3>
+
+      <div className="hidden md:block">
         {renderNoImageHeader()}
         {mtechOngoingMembers.map(renderNoImageMember)}
       </div>
-      {/* Mtech alumni */}
-      <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
-        <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">M.Tech. Alumni</h3>
+
+      <div className="grid grid-cols-1 gap-6 md:hidden">
+        {mtechOngoingMembers.map(renderNoImageMemberMobile)}
+      </div>
+    </div>
+
+    {/* M.Tech. Alumni */}
+    <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
+      <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">
+        M.Tech. Alumni
+      </h3>
+
+      <div className="hidden md:block">
         {renderNoImageHeaderwithpos()}
         {mtechalumni.map(renderNoImageMember)}
       </div>
-      {/* IDD (Ongoing) */}
-      <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
-        <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">IDD (Ongoing)</h3>
+
+      <div className="grid grid-cols-1 gap-6 md:hidden">
+        {mtechalumni.map(renderNoImageMemberMobile)}
+      </div>
+    </div>
+
+    {/* IDD (Ongoing) */}
+    <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
+      <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">
+        IDD (Ongoing)
+      </h3>
+
+      <div className="hidden md:block">
         {renderNoImageHeader()}
         {IDDon.map(renderNoImageMember)}
       </div>
-      {/* IDD Alumni */}
-       <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
-        <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">IDD Alumni</h3>
+
+      <div className="grid grid-cols-1 gap-6 md:hidden">
+        {IDDon.map(renderNoImageMemberMobile)}
+      </div>
+    </div>
+
+    {/* IDD Alumni */}
+    <div className="max-w-[1000px] mx-auto space-y-6 mb-12">
+      <h3 className="text-2xl font-semibold text-red-800 mb-4 border-b-2 border-red-300 pb-2">
+        IDD Alumni
+      </h3>
+
+      <div className="hidden md:block">
         {renderNoImageHeaderwithpos()}
         {IDDAlumni.map(renderNoImageMember)}
       </div>
-    </div>
-  );
-};
 
+      <div className="grid grid-cols-1 gap-6 md:hidden">
+        {IDDAlumni.map(renderNoImageMemberMobile)}
+      </div>
+    </div>
+  </div>
+);
+};
 export default GroupMembers;
